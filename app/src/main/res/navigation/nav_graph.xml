@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/login_fragment"
+        android:name="com.semanienterprise.sbscapplication.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        tools:layout="@layout/users_fragment"
+        android:name="com.semanienterprise.sbscapplication.users.UsersFragment"
+        android:label="UsersFragment">
+        <action
+            android:id="@+id/action_usersFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.semanienterprise.sbscapplication.articles.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/article_fragment"
+        >
+        <argument
+            android:name="article"
+            app:argType="com.semanienterprise.sbscapplication.users.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.semanienterprise.sbscapplication.admin.AdminFragment"
+        android:label="AdminFragment"
+        tools:layout="@layout/admin_fragment"
+        />
+</navigation>
